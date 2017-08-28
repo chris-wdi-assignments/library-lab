@@ -1,7 +1,8 @@
 <% @libraries.each do |library| %>
   <div>
-    <h3>
-      <%= link_to library.name, "/libraries/#{library.id}" %></h3>
+    <h3><%= link_to library.name, "/libraries/#{library.id}" %></h3>
+    <% if current_user %>
+      <%= button_to "Join Library", library_users_path(library) %>
+    <% end %>
   </div>
-  <br>
 <% end %>
