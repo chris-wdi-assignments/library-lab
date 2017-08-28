@@ -1,0 +1,7 @@
+<% @libraries.each do |library| %>
+  <div>
+    <h3>
+      <%= link_to library.name, "/libraries/#{library.id}" %></h3>
+  </div>
+  <br>
+<% end %>
