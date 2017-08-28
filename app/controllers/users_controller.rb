@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  before_action :require_login, only: [:show]
+
   def show
     @user = User.find_by_id(params[:id])
   end
